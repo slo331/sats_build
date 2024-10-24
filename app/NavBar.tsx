@@ -5,7 +5,7 @@ import UserBtn from './UserBtn'
 
 const NavBar = () => {
   return (
-    <nav>
+    <nav className='sticky top-0 w-full z-10'>
       <div className='navbar-wrap px-7 py-4 flex items-center justify-between dark:bg-slate-800 bg-gray-100'>
         <HamburgerMenu />
         <UserBtn />

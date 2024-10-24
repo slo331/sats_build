@@ -34,7 +34,7 @@ table tr.sticky {
   position: sticky;
   top: 0;
   z-index: 1;
-  background: rgb(var(--tablebackground));
+  @apply dark:bg-slate-800 bg-gray-100;
 }
 
 table th.sticky,
@@ -61,4 +61,18 @@ table td.sticky::before {
   left: 0px;
   top: 0;
   bottom: 0px;
+}
+
+@media only screen and (min-width: 1024px) {
+  .table-item .rt-ScrollAreaViewport {
+    min-height: 200px;
+    height: calc(100vh - 450px);
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  .table-item .rt-ScrollAreaViewport {
+    min-height: 200px;
+    height: calc(100vh - 475px);
+  }
 }

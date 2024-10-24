@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import { Theme } from '@radix-ui/themes'
 import NavBar from './NavBar'
 import { Providers } from './components/Provider'
+import Footer from './Footer'
 
 export const metadata: Metadata = {
   title: 'SATS Assignments',
@@ -23,6 +24,7 @@ export default function RootLayout({
             <main>
               {children}
             </main>
+            <Footer />
           </Theme>
         </Providers>
       </body>

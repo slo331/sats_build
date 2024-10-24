@@ -28,7 +28,7 @@ export default async function Home() {
                 </div>
               </Text>
               <Filters />
-              <Table.Root layout={'auto'} size={'2'}>
+              <Table.Root size={'2'} className='table-item'>
                 <Table.Header>
                   <Table.Row className='sticky'>
                     <Table.ColumnHeaderCell width={'auto'} minWidth={'150px'} className='sticky left-0 z-10'>

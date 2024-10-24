@@ -11,8 +11,8 @@ const NewsTicker = () => {
   ]
 
   return (
-    <div className='news-ticker dark:bg-slate-500 bg-gray-600 bg-opacity-35 p-2'>
-      <p className='dark:text-white text-slate-800'>
+    <div className='news-ticker dark:bg-slate-500 bg-black bg-opacity-15 p-2'>
+      <p className='dark:text-white text-black'>
         {news.map((item, index) =>  <span key={ index + 1 } className='mr-8'>{ item }</span> )}
       </p>
     </div>
