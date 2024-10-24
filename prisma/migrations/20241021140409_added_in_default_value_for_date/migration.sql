@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE `item` MODIFY `date` VARCHAR(191) NOT NULL DEFAULT '07 Oct';

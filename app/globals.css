@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap'); /* Poppins Fonts */
+@import "@radix-ui/themes/styles.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply dark:bg-slate-800 bg-gray-50;
+  }
+}
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --borderColor: rgba(255, 255, 255, 0.05);
+  --tablebackground: rgb(243 244 246  / 100);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --borderColor: rgb(56 56 56 / 80);
+    --tablebackground: rgb(30 41 59 / 100);
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+}
+
+table tr.sticky {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: rgb(var(--tablebackground));
+}
+
+table th.sticky,
+table td.sticky {
+  position: sticky;
+  left: 0;
+  @apply dark:bg-slate-800 bg-gray-100;
+}
+
+table th.sticky::after,
+table td.sticky::after {
+  content: '';
+  position: absolute;
+  right: 0px;
+  top: 0;
+  bottom: 0px;
+}
+
+table th.sticky::before,
+table td.sticky::before {
+  content: '';
+  position: absolute;
+  display: block;
+  left: 0px;
+  top: 0;
+  bottom: 0px;
+}

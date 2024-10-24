@@ -1,0 +1,45 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Item {
+  id       Int      @id @default(autoincrement())
+  itemno   String   @db.VarChar(8)
+  category Category @default(OPP)
+  date     String   @default("07 Oct")
+  schedule String   @default("17:00/-")
+  act      String   @default("-")
+  to       To       @default(LMM)
+  title    String   @db.VarChar(8)
+  type     String   @db.VarChar(3)
+  info     String   @default("-/-")
+  alert    String   @default("NA")
+  deptA    String   @default("NA")
+  deptB    String   @default("-/-")
+  deptC    String   @default("-/-")
+  issues   Int      @default(0)
+  status   Status   @default(OPEN)
+}
+
+enum Category {
+  OPP
+  BTR
+  NXY
+}
+
+enum To {
+  LMM
+  XYP
+  LTX
+}
+
+enum Status {
+  OPEN
+  IN_PROGRESS
+  CLOSED
+}
