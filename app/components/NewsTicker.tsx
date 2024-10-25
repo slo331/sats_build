@@ -1,5 +1,5 @@
 import React from 'react'
-import "./NewsTicker.css"
+import './NewsTicker.css'
 
 const NewsTicker = () => {
   const news = [
@@ -11,9 +11,9 @@ const NewsTicker = () => {
   ]
 
   return (
-    <div className='news-ticker dark:bg-slate-500 bg-black bg-opacity-15 p-2'>
-      <p className='dark:text-white text-black'>
-        {news.map((item, index) =>  <span key={ index + 1 } className='mr-8'>{ item }</span> )}
+    <div className='news-ticker dark:bg-slate-500 bg-zinc-300 p-2'>
+      <p className='dark:text-white text-black flex items-center'>
+        {news.map((item, index) =>  <span key={ index + 1 }>{ item }<span className='mx-8 text-xl'>&bull;</span></span> )}
       </p>
     </div>
   )
