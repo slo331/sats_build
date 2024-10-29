@@ -2,6 +2,7 @@ import React from 'react'
 import prisma from '@/prisma/client'
 import { Card, Flex, Table, Tabs, Text } from '@radix-ui/themes'
 import { BsPinAngle } from 'react-icons/bs'
+import { promises as fs } from 'fs'
 import Filters from './Filters'
 import ItemBadge from './components/ItemBadge'
 import StatusBadge from './components/StatusBadge'
@@ -9,7 +10,11 @@ import Link from 'next/link'
 import { BiSortAlt2 } from 'react-icons/bi'
 
 export default async function Home() {
-  const items = await prisma.item.findMany();
+  // const items = await prisma.item.findMany()
+  const file = await fs.readFile(process.cwd() + '/app/data.json', 'utf8')
+  const items = JSON.parse(file)
+
+  // console.log('Data:', items)
 
   return (
     <div className='w-full mx-auto px-5 py-6'>
@@ -119,7 +124,7 @@ export default async function Home() {
                 </Table.Header>
 
                 <Table.Body>
-                  {items.map(item => (
+                  {items.map((item: any) => (
                     <Table.Row key={item.id} align={'center'}>
                       <Table.Cell py={'3'} className='sticky left-0'>
                         <div className='item-wrap w-full flex items-center space-x-4 md:space-x-6'>
@@ -221,7 +226,7 @@ export default async function Home() {
               </Text>
               <Filters />
               <div className='mt-1 pt-4 border-t-2 dark:border-slate-500 border-gray-300 flex flex-wrap'>
-                {items.map(item => (
+                {items.map((item: any) => (
                   <div key={item.id} className='px-0 py-2 md:px-2 w-full md:w-1/2 lg:w-1/3'>
                     <Card>
                       <div className='item-wrap w-full flex items-center space-x-4 md:space-x-6'>
