@@ -12,7 +12,7 @@ const UserBtn = () => {
     <div className='flex items-center'>
       <DropdownMenu.Root>
         <DropdownMenu.Trigger>
-          <button className='dark:bg-white bg-slate-700 rounded-full p-2' title='Stephen Orioste'>
+          <button className='dark:bg-white bg-slate-700 rounded-full p-2' title='Username'>
             <LuUser2 className='dark:text-slate-800 text-white text-2xl font-bold' />
           </button>
         </DropdownMenu.Trigger>
@@ -23,8 +23,8 @@ const UserBtn = () => {
                 <LuUser2 className='dark:text-slate-800 text-white text-3xl font-bold' />
               </div>
               <div className='userDetails'>
-                <span className='block font-medium text-base/[22px] mb-0'>Stephen Orioste</span>
-                <Link href='mailto:stephen.orioste@email.com' className='block text-sm/[12px] transition-colors hover:ease-in-out hover:text-amber-500'>stephen.orioste@email.com</Link>
+                <span className='block font-medium text-base/[22px] mb-0'>Username</span>
+                <Link href='mailto:username@sats.com.sg' className='block text-sm/[12px] transition-colors hover:ease-in-out hover:text-amber-500'>username@sats.com.sg</Link>
               </div>
             </div>
           </div>
